@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: Janken
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/JenkenDB
+    username: postgres
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialate: org.hibernate.dialect.PostgreSQLDialect
+
+
+management:
+  endpoint:
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include:
+          - '*'
